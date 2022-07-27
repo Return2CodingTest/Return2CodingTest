@@ -2,14 +2,13 @@ from typing import List
 
 class Solution:
   def maxProduct(self, nums: List[int]) -> int:
-    answer = nums[0]
+    answer = max(nums)
 
     minPositiveSerialProduct = 1
     maxNegativeSerialProduct = 0
     serialProduct = 1
 
     for num in nums:
-      answer = max(answer, num)
       serialProduct *= num
 
       if serialProduct < 0:

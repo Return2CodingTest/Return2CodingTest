@@ -11,8 +11,8 @@ class Solution:
 
     answer = []
     prevNum1 = None
-    for i in range(len(nums)):
-      num1 = nums[i]
+    for i, num in enumerate(nums):
+      num1 = num
       if num1 == prevNum1: continue
       prevNum1 = num1
 

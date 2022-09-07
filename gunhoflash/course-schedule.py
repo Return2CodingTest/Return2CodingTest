@@ -4,7 +4,7 @@ class Solution:
   def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
     nPrerequisitesList = [0] * numCourses
     nextList = [[] for i in range(numCourses)]
-    nVisited = 0
+    nVisited = numCourses
 
     for [nextCourse, prevCourse] in prerequisites:
       nextList[prevCourse].append(nextCourse)
@@ -16,7 +16,7 @@ class Solution:
         visitingStack.append(i)
 
     while len(visitingStack):
-      nVisited += 1
+      nVisited -= 1
       i = visitingStack.pop()
 
       for nextCourse in nextList[i]:
@@ -24,4 +24,4 @@ class Solution:
         if nPrerequisitesList[nextCourse] == 0:
           visitingStack.append(nextCourse)
 
-    return nVisited == numCourses
+    return nVisited == 0

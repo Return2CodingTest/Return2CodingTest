@@ -1,7 +1,7 @@
 function canFinish(numCourses: number, prerequisites: number[][]): boolean {
   const nPrerequisitesList: number[] = Array(numCourses).fill(0);
   const nextList: number[][] = Array(numCourses).fill(null).map(() => []);
-  let nVisited = 0;
+  let nVisited = numCourses;
 
   for (const [nextCourse, prevCourse] of prerequisites) {
     nextList[prevCourse].push(nextCourse);
@@ -16,7 +16,7 @@ function canFinish(numCourses: number, prerequisites: number[][]): boolean {
   }
 
   while (visitingStack.length) {
-    ++nVisited;
+    --nVisited;
     const i = visitingStack.pop()!;
 
     for (const nextCourse of nextList[i]) {
@@ -26,5 +26,5 @@ function canFinish(numCourses: number, prerequisites: number[][]): boolean {
     }
   }
 
-  return nVisited === numCourses;
+  return nVisited === 0;
 }

@@ -1,3 +1,5 @@
+from typing import List
+
 class Element:
   def __init__(self, value, left, right):
     self.value = value

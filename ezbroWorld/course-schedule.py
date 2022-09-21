@@ -31,4 +31,4 @@ class Solution:
         for x in list(graph):
             if not dfs(x):
                 return False
-            return True
+        return True

@@ -12,6 +12,6 @@ def eraseOverlapIntervals(intervals: List[List[int]]) -> int:
         if start < prevEnd:
             count += 1
         else:
-            prevEnd = start
+            prevEnd = end
     
     return count

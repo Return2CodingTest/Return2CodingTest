@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 class ListNode:
   def __init__(self, val = 0, next = None):

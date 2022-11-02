@@ -13,6 +13,6 @@ class Solution:
             
             if end-start-frequentCnt > k : 
                 counter[s[start]]-=1
-                start-=1
+                start+=1
                 
         return end- start

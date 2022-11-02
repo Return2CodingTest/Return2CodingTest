@@ -1,5 +1,5 @@
 from collections import deque
-from typing import List, Optional
+from typing import Optional
 
 class ListNode:
   def __init__(self, val = 0, next = None):

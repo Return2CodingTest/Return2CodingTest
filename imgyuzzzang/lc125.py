@@ -1,0 +1,17 @@
+# 125. Valid Palindrome
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        cleanString = "".join(filter(lambda x: x.isalnum(), s)).upper()
+        n = len(cleanString)
+        
+        start, end = 0, n - 1
+        
+        while start <= end:
+            if cleanString[start] != cleanString[end]:
+                return False
+            start += 1
+            end -= 1
+        
+        return True
+        

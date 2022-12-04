@@ -7,11 +7,5 @@ class Solution:
         
         start, end = 0, n - 1
         
-        while start <= end:
-            if cleanString[start] != cleanString[end]:
-                return False
-            start += 1
-            end -= 1
-        
-        return True
+        return cleanString == cleanString[::-1]
         

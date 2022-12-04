@@ -2,7 +2,7 @@
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        cleanString = "".join(filter(lambda x: x.isalnum(), s)).upper()
+        cleanString = "".join(filter(str.isalnum, s)).upper()
         n = len(cleanString)
         
         start, end = 0, n - 1

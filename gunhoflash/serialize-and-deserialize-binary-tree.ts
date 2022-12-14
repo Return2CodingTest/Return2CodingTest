@@ -31,7 +31,7 @@ function deserialize(data: string): TreeNode | null {
   const node = JSON.parse(data) as TreeNode | null;
   return node && new TreeNode(
     node.val,
-    node.left ? deserialize(JSON.stringify(node.left)) : null,
-    node.right ? deserialize(JSON.stringify(node.right)) : null,
+    node.left ? deserialize(serialize(node.left)) : null,
+    node.right ? deserialize(serialize(node.right)) : null,
   );
 }
